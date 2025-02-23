@@ -3,10 +3,36 @@ body{
     background-color: aliceblue;
 }
 
+.intro{
+    position:absolute;
+    left:42%;
+    top:30%;
+
+    animation-duration: 5s;
+    animation-name:heart;
+    animation-fill-mode: forwards;
+}
+
+.intro h1{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    position:absolute;
+    top:45%;
+    left:24.5%;
+    font-size:11px;
+
+    animation-duration: 5s;
+    animation-name: intro-text;
+    animation-fill-mode: forwards;
+}
+
 .container{
     padding-top: 1%;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+
+    animation-duration: 5s;
+    animation-name: container_wait;
 }
 
 .container button{
@@ -37,4 +63,61 @@ body{
 
 .disabled{
     display:none;
+}
+
+@keyframes heart{
+    0%{
+        /* Heart should be at the center, not shown yet*/
+        scale:0;
+    }
+
+    15%{
+        scale:2;
+    }
+    40%{
+        scale:1;
+    }
+
+    80%{
+        scale:12;
+        opacity:1;
+    }
+    100%{
+        display: none;
+        opacity:0;
+        /* Opacity to 0 */
+    }
+}
+
+@keyframes intro-text{
+    0%{
+        display:none;
+    }
+    60%{
+        display:none;
+        opacity:0;
+    }
+    61%{
+        display:inline-block;
+    }
+
+    69%{
+        opacity:1;
+    }
+    90%{
+        display:none;
+    }
+}
+
+@keyframes container_wait{
+    0%{
+        opacity:0;
+    }
+    79%{
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
 }
